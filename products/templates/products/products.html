@@ -26,11 +26,11 @@
                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                             <div class="card h-100 border-0">
                                 {% if product.image %}
-                                    <a href="">
+                                    <a href="{% url 'product_detail' product.id %}">
                                         <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
                                     </a>
                                 {% else %}
-                                    <a href="">
+                                    <a href="{% url 'product_detail' product.id %}">
                                         <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.pg" alt="{{ product.name }}">
                                     </a>
                                 {% endif %}
@@ -52,22 +52,22 @@
                             </div>
                         </div>
                         {% if forloop.counter|divisibleby:1 %}
-                        <div class="col-12 d-sm-none mb-5"> <!--display button lin on small screen-->
+                        <div class="col-12 d-sm-none mb-5"> <!--display botton line on small screen-->
                             <hr>
                         </div>
                         {% endif %}
                         {% if forloop.counter|divisibleby:2 %}
-                            <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5"> <!--display button lin on medium screen-->
+                            <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5"> <!--display botton line on medium screen-->
                                 <hr>
                             </div>
                         {% endif %}
                         {% if forloop.counter|divisibleby:3 %}
-                            <div class="col-12 d-none d-lg-block d-xl-none mb-5"> <!--display button lin on large screen-->
+                            <div class="col-12 d-none d-lg-block d-xl-none mb-5"> <!--display botton line on large screen-->
                                 <hr>
                             </div>
                         {% endif %}
                         {% if forloop.counter|divisibleby:4 %}
-                        <div class="col-12 d-none d-xl-block mb-5"> <!--display button lin on xl screen-->
+                        <div class="col-12 d-none d-xl-block mb-5"> <!--display botton line on xl screen-->
                             <hr>
                         </div>
                         {% endif %}
